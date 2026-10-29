@@ -20,7 +20,7 @@
             padding: 35px 20px;
         }
 
-        /* Main Grid Container */
+        
         .gallery {
             width: 100%;
             max-width: 1000px;
@@ -32,7 +32,7 @@
             gap: 10px;
         }
 
-        /* Common Card Styling */
+       
         .card {
             position: relative;
             padding: 22px;
@@ -49,7 +49,7 @@
             overflow: hidden;
         }
 
-        /* Dark Overlay */
+      
         .card::before {
             content: "";
             position: absolute;
@@ -65,21 +65,21 @@
             z-index: 0;
         }
 
-        /* Text Above Overlay */
+       
         .card h2,
         .card a {
             position: relative;
             z-index: 1;
         }
 
-        /* Card Title */
+        
         .card h2 {
             font-size: 15px;
             font-weight: normal;
             line-height: 1.5;
         }
 
-        /* Read Post Link */
+       
         .card a {
             align-self: flex-end;
             color: white;
@@ -91,7 +91,7 @@
             text-decoration: underline;
         }
 
-        /* First Row */
+       
         .leaves {
             background-image: url("images/leaves.png");
         }
@@ -101,7 +101,6 @@
             background-image: url("images/city.png");
         }
 
-        /* Second Row */
         .ocean {
             grid-column: span 2;
             background-image: url("images/ocean.png");
@@ -111,7 +110,7 @@
             background-image: url("images/building.png");
         }
 
-        /* Third Row */
+        
         .sunset {
             background-image: url("images/sunset.png");
         }
@@ -124,7 +123,7 @@
             background-image: url("images/table.png");
         }
 
-        /* Tablet Layout */
+       
         @media (max-width: 650px) {
             body {
                 padding: 15px;
@@ -145,7 +144,6 @@
             }
         }
 
-        /* Mobile Layout */
         @media (max-width: 450px) {
             .gallery {
                 grid-template-columns: 1fr;
@@ -169,43 +167,42 @@
 
     <main class="gallery">
 
-        <!-- Card 1 -->
+      
         <article class="card leaves">
             <h2>The winter of my discontent</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 2 -->
+       
         <article class="card city">
             <h2>Instagram is toxic but I keep posting</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 3 -->
+        
         <article class="card ocean">
             <h2>Throwing my phone into the ocean</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 4 -->
+        
         <article class="card building">
             <h2>I'm never leaving my room</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 5 -->
         <article class="card sunset">
             <h2>Staring at the horizon thinking</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 6 -->
+        
         <article class="card water">
             <h2>This is water</h2>
             <a href="#">READ POST</a>
         </article>
 
-        <!-- Card 7 -->
+        
         <article class="card table">
             <h2>Table for one please</h2>
             <a href="#">READ POST</a>
