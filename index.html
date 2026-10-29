@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Grid Blog Gallery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 35px 20px;
+        }
+
+        /* Main Grid Container */
+        .gallery {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 200px;
+            gap: 10px;
+        }
+
+        /* Common Card Styling */
+        .card {
+            position: relative;
+            padding: 22px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Dark Overlay */
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.25),
+                rgba(0, 0, 0, 0.02) 55%,
+                rgba(0, 0, 0, 0.35)
+            );
+
+            z-index: 0;
+        }
+
+        /* Text Above Overlay */
+        .card h2,
+        .card a {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Card Title */
+        .card h2 {
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        /* Read Post Link */
+        .card a {
+            align-self: flex-end;
+            color: white;
+            text-decoration: none;
+            font-size: 9px;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* First Row */
+        .leaves {
+            background-image: url("images/leaves.png");
+        }
+
+        .city {
+            grid-column: span 2;
+            background-image: url("images/city.png");
+        }
+
+        /* Second Row */
+        .ocean {
+            grid-column: span 2;
+            background-image: url("images/ocean.png");
+        }
+
+        .building {
+            background-image: url("images/building.png");
+        }
+
+        /* Third Row */
+        .sunset {
+            background-image: url("images/sunset.png");
+        }
+
+        .water {
+            background-image: url("images/wather.png");
+        }
+
+        .table {
+            background-image: url("images/table.png");
+        }
+
+        /* Tablet Layout */
+        @media (max-width: 650px) {
+            body {
+                padding: 15px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+            }
+
+            .city,
+            .ocean {
+                grid-column: span 2;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+
+        /* Mobile Layout */
+        @media (max-width: 450px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            .leaves,
+            .city,
+            .ocean,
+            .building,
+            .sunset,
+            .water,
+            .table {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="gallery">
+
+        <!-- Card 1 -->
+        <article class="card leaves">
+            <h2>The winter of my discontent</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card city">
+            <h2>Instagram is toxic but I keep posting</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card ocean">
+            <h2>Throwing my phone into the ocean</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card building">
+            <h2>I'm never leaving my room</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card sunset">
+            <h2>Staring at the horizon thinking</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card water">
+            <h2>This is water</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card table">
+            <h2>Table for one please</h2>
+            <a href="#">READ POST</a>
+        </article>
+
+    </main>
+
+</body>
+</html>
