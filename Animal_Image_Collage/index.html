@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animal Image Collage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .collage {
+            width: 475px;
+            height: 400px;
+            background-color: #d4b000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .animal {
+            position: absolute;
+            width: 145px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #d4b000;
+        }
+
+        
+        .wolf {
+            top: 5px;
+            left: 15px;
+        }
+
+        .tiger {
+            top: 5px;
+            right: 15px;
+        }
+
+        
+        .lion {
+            width: 165px;
+            height: 145px;
+            top: 125px;
+            left: 155px;
+            z-index: 2;
+        }
+
+        
+        .husky {
+            bottom: 5px;
+            left: 15px;
+        }
+
+        .bear {
+            bottom: 5px;
+            right: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="collage">
+
+        <img src="images/wolf.png"
+             alt="Wolf"
+             class="animal wolf">
+
+        <img src="images/tiger.png"
+             alt="Tiger"
+             class="animal tiger">
+
+        <img src="images/lion.png"
+             alt="Lion"
+             class="animal lion">
+
+        <img src="images/husky.png"
+             alt="Husky"
+             class="animal husky">
+
+        <img src="images/bear.png"
+             alt="Bear"
+             class="animal bear">
+
+    </div>
+
+</body>
+
+</html>

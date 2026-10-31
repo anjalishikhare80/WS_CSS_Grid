@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Grid Image Collage</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .gallery {
+            width: 90%;
+            max-width: 1000px;
+            aspect-ratio: 2.54 / 1;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        
+        .item {
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid white;
+        }
+
+        
+        .lake {
+            top: 0;
+            left: 0;
+            width: 39%;
+            height: 78%;
+
+            background-image: url("images/lake.png");
+
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                0 100%
+            );
+
+            z-index: 1;
+        }
+
+        
+        .bridge {
+            bottom: 0;
+            left: 0;
+            width: 67%;
+            height: 80%;
+
+            background-image: url("images/bridge.png");
+
+            clip-path: polygon(
+                0 75%,
+                40% 0,
+                100% 100%,
+                0 100%
+            );
+
+            z-index: 2;
+        }
+
+        
+        .mountain {
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+
+            background-image: url("images/mountain.png");
+
+            clip-path: polygon(
+                35% 0,
+                100% 0,
+                100% 100%,
+                0 100%,
+                0 55%
+            );
+
+            z-index: 1;
+        }
+
+        
+        .sunset {
+            top: 0;
+            right: 0;
+            width: 27%;
+            height: 55%;
+
+            background-image: url("images/sunset.png");
+
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%
+            );
+
+            z-index: 2;
+        }
+
+        
+        .content {
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 47%;
+            height: 58%;
+
+            z-index: 5;
+        }
+
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #929292;
+
+            clip-path: polygon(
+                39% 0,
+                100% 0,
+                42% 100%,
+                0 46%
+            );
+        }
+
+        
+        .content-text {
+            position: absolute;
+            top: 12%;
+            left: 39%;
+            width: 43%;
+
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .content-text h3 {
+            font-size: 11px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .content-text p {
+            font-size: 8px;
+            line-height: 1.5;
+        }
+
+        
+        @media (max-width: 600px) {
+
+            .gallery {
+                width: 96%;
+            }
+
+            .content-text h3 {
+                font-size: 7px;
+                margin-bottom: 5px;
+            }
+
+            .content-text p {
+                font-size: 5px;
+                line-height: 1.3;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="gallery">
+
+        <!-- Lake image -->
+        <div class="item lake"></div>
+
+        <!-- Bridge image -->
+        <div class="item bridge"></div>
+
+        <!-- Mountain image -->
+        <div class="item mountain"></div>
+
+        <!-- Sunset image -->
+        <div class="item sunset"></div>
+
+        <!-- Grey section with separate text -->
+        <div class="content">
+
+            <div class="content-text">
+
+                <h3>
+                    THIS GRID WORKS<br>
+                    IN INTERNET EXPLORER
+                </h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna
+                    aliquam erat volutpat. Ut wisi enim ad minim
+                    veniam, quis nostrud exercitation
+                    ullamcorper suscipit lobortis nisl ut aliquip
+                    ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
